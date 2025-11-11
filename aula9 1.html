@@ -153,8 +153,13 @@ console.log(botaoCapture)
 //   Adicione a classe "destaque" (veja o <style>) a essa 'div.box'.
 
 
+let botaoTeste = document.querySelector(".botao-teste")
 
+botaoTeste.addEventListener("click", ()=>{
 
+botaoTeste.parentElement.classList.add("destaque")
+
+})
 //------------------------------------------------------------
 // 2. O Objeto 'event' e 'e.target'
 // Quando você adiciona um 'addEventListener', sua função (callback)
@@ -189,6 +194,20 @@ listaToda.addEventListener("click", (e) => {
 
 // 3. faça com que a seção "Seção de travessia" tenha a mesma funcionalidade
 //   ao clicar nas caixas
+
+
+let secaoTravessia = document.querySelector("#box");
+
+secaoTravessia.addEventListener("click", (e) => {
+
+    console.log(e)
+
+    console.log("currentTarget (quem ouviu):", e.currentTarget);
+    
+    console.log("target (quem foi clicado):", e.target);
+
+    e.target.textContent = "Eu fui clicado!";
+});
 
 //------------------------------------------------------------
 // 3. Delegação de Eventos (Juntando tudo)
